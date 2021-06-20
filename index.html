@@ -53,6 +53,9 @@
                                            style="table-layout:fixed" width="100%">
                                       <tbody>
                                       <tr>
+                                        <div id="debug-div">Debug Div</div>
+                                      </tr>
+                                      <tr>
                                         <td align="center" bgcolor=""
                                             style="padding:0px 0px 0px 0px">
                                           <table border="0" cellpadding="0"
@@ -99,9 +102,12 @@
   </div>
 </div>
 <script type="text/javascript">
-var uas = navigator.userAgent;
 var debug_div = document.getElementById("debug-div")
-debug_div.innerHTML = uas;
+if (debug_div != null) {
+  var uas = navigator.userAgent;
+  debug_div.innerHTML = uas;
+}
+
 if (uas.indexOf("[LinkedInApp]") >= 0) {
   var google_auth_button = document.getElementById("google-auth-button");
   google_auth_button.href = google_auth_button.href.replace("https://", "googlechromes://")
